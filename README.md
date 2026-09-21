@@ -49,7 +49,6 @@ bar is off
 baz is off
 qux is on
 ```
-After you've completed this process, go back to your Makefile and remove all of the configuration options that you set to off in your configuration file if you didn't just add the options in the configuration file.
 ### Step 3 - Using the configuration
 To generate a configure file, run this command.
 ``` shell
@@ -77,11 +76,10 @@ qux is on
 ```
 Repeat for every other preset you want to add. You cannot set Makefile flags for individual presets unless you add that to the configure script.
 ### Step 2 - Using the preset
-First, run this command to generate a basic configure script.
+Run this command to generate a basic configure script.
 ``` shell
 confectionery build presets presetname
 ```
-Then, remove all options from the Makefile that are set to off in the preset configuration.
 ### Step 3 - Building the application (for anyone wondering)
 To make the application, you just need to run the holy trinity of make commands:
 ``` shell
