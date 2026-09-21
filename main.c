@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 
 /* Helper: write enable/disable lines to configure script */
-void write_option(FILE *out, const char *option, int enable) {
+void write_validated_option(FILE *out, const char *option, int enable) {
     if (enable) {
         fprintf(out, "echo \"Enabling %s\"\n", option);
         fprintf(out, "export %s=1\n", option);
@@ -66,11 +66,11 @@ int main(int argc, char *argv[]) {
         while (fgets(line, sizeof(line), config)) {
             if (strstr(line, "is on")) {
                 sscanf(line, "%127s", option);
-                write_option(out, option, 1);
+                write_validated_option(out, option, 1);
             }
             if (strstr(line, "is off")) {
                 sscanf(line, "%127s", option);
-                write_option(out, option, 0);
+                write_validated_option(out, option, 0);
             }
         }
 
