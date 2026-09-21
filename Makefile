@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -O2
 
 TARGET = confectionery
 
-SRCS = main.c validation.c
+SRCS = main.c
 
 OBJS = $(SRCS:.c=.o)
 
