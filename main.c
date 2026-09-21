@@ -106,11 +106,11 @@ int main(int argc, char *argv[]) {
             if (in_correct_preset) {
                 if (strstr(line, "is on")) {
                     sscanf(line, "%127s", option);
-                    write_option(out, option, 1);
+                    write_validated_option(out, option, 1);
                 }
                 if (strstr(line, "is off")) {
                     sscanf(line, "%127s", option);
-                    write_option(out, option, 0);
+                    write_validated_option(out, option, 0);
                 }
             }
         }
