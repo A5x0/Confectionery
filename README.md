@@ -91,5 +91,5 @@ If your project doesn't have a test suite, you can exclude the make check step. 
 # Why Confectionery?
 Confectionery is the ideal build configuration system for:
 1. Extensively configurable applications where you would spend hours configuring them anyway.
-2. Applications currently using Meson (Python is one of humanity's worst inventions).
+2. Applications currently using Meson.
 3. Applications used in embedded systems that are currently using CMake.
