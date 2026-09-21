@@ -1,2 +1,2 @@
 # Confectionery
-The best build system for extensively configurable applications. Extremely lightweight and fast.
+The best build configuration system for extensively configurable applications. Extremely lightweight and fast.
