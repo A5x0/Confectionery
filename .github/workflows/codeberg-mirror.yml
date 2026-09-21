@@ -13,9 +13,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git credentials
+        run: |
+          git config --global user.name "github-mirror"
+          git config --global user.email "mirror@github"
+          git config --global credential.helper store
+          echo "https://A5x0:${{ secrets.CODEBERG_TOKEN }}@codeberg.org" > ~/.git-credentials
+
+      - name: Add Codeberg remote
+        run: |
+          git remote add codeberg https://codeberg.org/A5x0/Confectionery.git
 
       - name: Push to Codeberg
         run: |
-          git remote add codeberg https://A5x0:${{ secrets.CODEBERG_TOKEN }}@codeberg.org/A5x0/Confectionery.git
           git push --force --all codeberg
           git push --force --tags codeberg
