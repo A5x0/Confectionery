@@ -65,11 +65,11 @@ int main(int argc, char *argv[]) {
 
         while (fgets(line, sizeof(line), config)) {
             if (strstr(line, "is on")) {
-                sscanf(line, "$%127s", option);
+                sscanf(line, "%127s", option);
                 write_option(out, option, 1);
             }
             if (strstr(line, "is off")) {
-                sscanf(line, "$%127s", option);
+                sscanf(line, "%127s", option);
                 write_option(out, option, 0);
             }
         }
@@ -105,11 +105,11 @@ int main(int argc, char *argv[]) {
             /* Only parse inside the chosen preset */
             if (in_correct_preset) {
                 if (strstr(line, "is on")) {
-                    sscanf(line, "$%127s", option);
+                    sscanf(line, "%127s", option);
                     write_option(out, option, 1);
                 }
                 if (strstr(line, "is off")) {
-                    sscanf(line, "$%127s", option);
+                    sscanf(line, "%127s", option);
                     write_option(out, option, 0);
                 }
             }
