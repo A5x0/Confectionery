@@ -56,7 +56,15 @@ void write_validated_option(FILE *out, const char *option, int enable) {
 
 int main(int argc, char *argv[]) {
 
-    if (argc < 3) {
+if (argc < 3 || argc > 4) {
+        printf("Usage:\n");
+        printf("  %s build CONFECTIONERYCONFIG\n", argv[0]);
+        printf("  %s build PRESETS presetname\n", argv[0]);
+        return 1;
+    }
+
+    /* A preset file requires a preset name. */
+    if (argc == 3 && strcmp(argv[2], "PRESETS") == 0) {
         printf("Usage:\n");
         printf("  %s build CONFECTIONERYCONFIG\n", argv[0]);
         printf("  %s build PRESETS presetname\n", argv[0]);
@@ -72,7 +80,7 @@ int main(int argc, char *argv[]) {
     if (argc == 3) {
         /* Normal config mode */
         config_file = argv[2];
-    } else if (argc == 4) {
+    } else {
         /* Preset mode */
         using_presets = 1;
         presets_file = argv[2];
