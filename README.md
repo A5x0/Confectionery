@@ -16,7 +16,7 @@ Run make.
 make
 ```
 ### Step 3 (optional)
-Run make check. This runs the test suite. One test is known to fail.
+Run make test. This runs the test suite. One test is known to fail.
 ``` shell
 make check
 ```
