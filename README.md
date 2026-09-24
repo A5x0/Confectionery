@@ -18,7 +18,7 @@ make
 ### Step 3 (optional)
 Run make test. This runs the test suite.
 ``` shell
-make check
+make test
 ```
 # Using Confectionery
 There are two ways to use Confectionery. You can either build your own configuration and run it or use a preset.
