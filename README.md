@@ -1,3 +1,4 @@
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](LICENSE)
 # Confectionery
 Confectionery is the best build configuration system for extensively configurable applications. It is extremely lightweight. It is just one C file so you could, in theory, run gcc main.c and get Confectionery, but there are benefits that come with compiling it with the Makefile method such as a test suite, installation with make install, and being able to customize the Makefile if you want to.
 # Installing Confectionery
